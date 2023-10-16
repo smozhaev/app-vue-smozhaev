@@ -1,15 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div v-for="comment in comments" :key="comment">
+      <p>{{comment.id}}</p>
+    </div>
+    <ComentsBlock></ComentsBlock>
+  </div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ComentsBlock from './components/ComentsBlock.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ComentsBlock
+  },
+  data() {
+    return {
+      comments: [
+        {id:1, text:"lorem"},
+        {id:2,text:"lorem"},
+        {id:3,text:"lorem"},
+        {id:4,text:"lorem"},
+        {id:5,text:"lorem"},
+        {id:6,text:"lorem"},
+      ] 
+    }
   }
 }
 </script>
